@@ -5,82 +5,36 @@ output: html_document
 
 ### Introduction
 
-An introduction of the data and a description of the trends/books/items you are choosing to analyze (and why!)
+The events of the past few years have brought issues of systemic racism and police brutality to the forefront of public consciousness, sparking widespread conversations and protests around the world. This was especially apparent during 2020 through the Black Lives Matter movement following the murder of George Floyd. It seems that as a result, many have turned to books, media, and other resources to learn more about these topics and gain a deeper understanding of the experiences of marginalized groups. In this project, I will be analyzing data from the Seattle Public Library on items checked out that contain "African American" in the subject line. The data set covers all works checked out at least ten times a month from 2017-2023, providing useful data for a comprehensive evaluation of the trends in this subject area. The goal of this analysis is to identify patterns in the popularity of books, media, and other items related to African American culture, history, and experiences, and to understand whether the events of 2020 have had an impact on their usage. Through this project, I hope to shed light on the ways in which libraries and other institutions can be used as resource to help promote greater understanding and empathy among people of all backgrounds.
+Summary Information
 
 ### Summary Information
 
-Write a summary paragraph of findings that includes the 5 values calculated from your summary information R script
-
-These will likely be calculated using your DPLYR skills, answering questions such as:
-
-- What is the average number of checkouts for each item?
-- What is the month or year with the most/least checkouts for a book that you're interested in?
-- What is the month or year with the most/least checkouts for ebooks?
-- How has the number of print book checkouts changed over time?
-
-Feel free to calculate and report values that you find relevant.
+When compared to all Seattle Public Library items checked out at least 10 times a month from 2017-2023, items with Subjects including African American" made up only 0.02%. Of these items, the work with the highest total number of checkouts is "Becoming (Unabridged)® with 16029 checkouts. The three creators whose works have the highest total number of checkouts for these items are Michelle Obama, Michelle Obama, Colson Whitehead, and Ta-Nehisi Coates. These are some of the most well known Black authors who have contributed greatly to literature with works advancing the field of literature and shedding light onto the racial injustice in this country. So far this year, The light we carry: overcoming in uncertain times / Michelle Obama. has the most checkouts of all items whose subject contains "African American". There are hundreds of different items from the Seattle Public Library whose subject contains "African American". The most popular subject, however, is African American Fiction, Fiction, Literature based on total checkouts. Because this research aims to discover patterns among checkouts for these items over the last few years, it was important to calculate the total number of checkouts for each year. The year with the highest number of checkouts was 2019. This was a bit of a surprise considering 2020 saw the rise of the Black Lives Matter movements and other forms of activism against racism. It is also important to note that this was the year that the COVID-19 pandemic began, which may have affected fibrary checkouts.
+In total, 2020 had 134609 checkouts for items with subjects containing "African American"
 
 ### The Dataset
 
-- Who collected/published the data?  
-- What are the parameters of the data (dates, number of checkouts, kinds of books, etc.)?
-- How was the data collected or generated?  
-- Why was the data collected?  
-- What, if any, ethical questions do you need to consider when working with this data?  
-- What are possible limitations or problems with this data?   (at least 200 words)
+The original data was collected and published by the Seattle Public Library. The parameters of the data set include all items checked out at least 10 times a month within the years 2017-2023. This report specifically, will also hone in on items whose subject matter deals with African Americans and related materlal. Thls data was collected by automatically accounting for each item, whether it be physical or digital, when it is checked out from the library. This data was collected as an effort to increase transparency, accountability, and comparability for citizens of Seattle who are not government officials. By doing this, the city of Seattle hopes that citizens may contribute to finding solutions to pertinent Issues, improving further research, and bettering the government and city as a whole. Although making this data available to the public is a respectable effort by the government, there may still be some ethical questions to consider. For example, is everyone aware that their checkout data is publicly available? Do most citizens agree that this data should be public? Are there other options for those who want to use the Seattle Public Library without having their checkout data be publicly avallable? These are important things to think about. Because this data set reiles on tracking millions of items, it is likely that it is not completely accurate. For example, some items may be stolen or bypass checkout. Also. the number of each item in the library may change frequently which could impact the amount of times that item is checked out. Overall. this data set is quite rare to see from librarles and be used for a varlety of research projects!
+Comparing Checkouts for Items Covering African American Subject Matter vs. All Items
 
-
-### First Trends Over Time Chart
-
-Include a chart. Make sure to describe why you included the chart, and what patterns emerged
-
-The first chart that you will create and include will show the trend over time of your variable/topic/interest. Think carefully about what you want to communicate to your user (you may have to find relevant trends in the dataset first!). Here are some requirements to help guide your design:
-
-- Show more than one, but fewer than ~10 trends
-  - For example, two books, or 5 different mediums
-- You must have clear x and y axis labels
-- The chart needs a clear title 
-- You need a legend for your different line colors and a clear - legend title
-In your .Rmd file, make sure to describe why you included the chart, and what patterns emerged
-
-When we say "clear" or "human readable" titles and labels, that means that you should not just display the variable name.
-
-Here's an example of how to run an R script inside an RMarkdown file:
+### Comparing Checkouts for Items Covering African American Subject Matter vs. All Items
 
 ``````{r, echo = FALSE, warning = FALSE, code = readLines("chart1_example.R")}
 ```
 
-### Second Trends Over Time Chart
+This chart was included to show how items checked out from the Seattle Public Library, whose subject matter relating to African Americans, compare to all items checked out over the last decade. The chart looks specifically at the average monthly checkouts for items each year. The purpose of this chart is to reveal any trends for library items relating to African American subject matter over the last few years, with a particular interest for how the number of checkouts may have changed after the reemergance of the Black Lives Matter movement in 2020. The chart displays a large spike in these items around the year 2020, indicating that there may be a connection with the protests in 2020. While this is true, the chart also shows a decreased number of checkouts after the year 2020 which may reveal a declining interest in African American subject items
 
-Include a chart. Make sure to describe why you included the chart, and what patterns emerged
-
-The second chart that you will create and include will show another trend over time of your variable/topic/interest. Think carefully about what you want to communicate to your user (you may have to find relevant trends in the dataset first!). Here are some requirements to help guide your design:
-
-- Show more than one, but fewer than ~10 trends
-  - For example, two books, or 5 different mediums
-- You must have clear x and y axis labels
-- The chart needs a clear title 
-- You need a legend for your different line colors and a clear - legend title
-In your .Rmd file, make sure to describe why you included the chart, and what patterns emerged
-
-When we say "clear" or "human readable" titles and labels, that means that you should not just display the variable name.
-
-Here's an example of how to run an R script inside an RMarkdown file:
+### Comparing Checkouts for Items Covering African American Subject Matter vs. All Items
 
 ``````{r, echo = FALSE, code = readLines("chart2_example.R")}
 ```
 
-### Your Choice
+This chart was included to understand how high rated titles covering topics of racism were checked out from the SPL during 2020. The books included are some of the most popular in recent years and cover important subjects of race. These books are "Between the World and Me" by Ta-Nehisi Coates, "So You Want to Talk About Race" by ljeoma Oluo, and "The New Jim Crow" by Michelle Alexander. Based on this chart, it seems as if there was a spike in checkouts for "So You Want to Talk About Race" and "The New Jim Crow" in the months immediately following the Death of George Floyd which took place on May 25th. However, this does not seem to be a factor with the number of checkouts for "Between the World and Me", which is checked out at a fairly stable rate throughout the year.
 
-The last chart is up to you. It could be a line plot, scatter plot, histogram, bar plot, stacked bar plot, and more. Here are some requirements to help guide your design:
-
-- You must have clear x and y axis labels
-- The chart needs a clear title 
-- You need a legend for your different line colors and a clear legend title
-
-Here's an example of how to run an R script inside an RMarkdown file:
+### Analyzing Checkout Data for Popular Books Covering Racial Injustice in a Year that Sparked a Movement Against Racism 
 
 ``````{r, echo = FALSE, code = readLines("chart2_example.R")}
 ```
 
-
+This chart was included to display the total number of checkouts for SPL items each year during the last decade. This chart is broken down by the timing of George Floyd's deaths, which sparked a global movement against racism. It appears that 2019-2022 had the highest number of checkouts compared to all other years. While 2019 was prior to the death of George Floyd, all other years were either during or after his death and the beginning of the most recent BLM movement. This reveals a possible connection between the events and number of checkouts.
