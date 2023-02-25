@@ -1,7 +1,20 @@
 ---
-title: "A3: SPL Library Checkouts"
+title: "A3: SPL Library Checkouts - Exploring how Recent Movements Against Racism Influenced SPL Checkouts"
+author: "Peter Corroon "
+date: "02/25/2023"
 output: html_document
 ---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, message = FALSE)
+
+# source all R libraries
+library("dplyr")
+library("stringr")
+library("ggplot2")
+library("treemapify")
+
+```
 
 ### Introduction
 
@@ -10,8 +23,7 @@ Summary Information
 
 ### Summary Information
 
-When compared to all Seattle Public Library items checked out at least 10 times a month from 2017-2023, items with Subjects including African American" made up only 0.02%. Of these items, the work with the highest total number of checkouts is "Becoming (Unabridged)® with 16029 checkouts. The three creators whose works have the highest total number of checkouts for these items are Michelle Obama, Michelle Obama, Colson Whitehead, and Ta-Nehisi Coates. These are some of the most well known Black authors who have contributed greatly to literature with works advancing the field of literature and shedding light onto the racial injustice in this country. So far this year, The light we carry: overcoming in uncertain times / Michelle Obama. has the most checkouts of all items whose subject contains "African American". There are hundreds of different items from the Seattle Public Library whose subject contains "African American". The most popular subject, however, is African American Fiction, Fiction, Literature based on total checkouts. Because this research aims to discover patterns among checkouts for these items over the last few years, it was important to calculate the total number of checkouts for each year. The year with the highest number of checkouts was 2019. This was a bit of a surprise considering 2020 saw the rise of the Black Lives Matter movements and other forms of activism against racism. It is also important to note that this was the year that the COVID-19 pandemic began, which may have affected fibrary checkouts.
-In total, 2020 had 134609 checkouts for items with subjects containing "African American"
+When compared to all Seattle Public Library items checked out at least 10 times a month from 2017-2023, items with subjects including African American" made up only **`r summary_info$percent_afram`** . Of these items, the work with the highest total number of checkouts is **`r summary_info$most_checkouts[1, 1]`** with **`r summary_info$most_checkouts[1, 2]`** checkouts. The three creators whose works have the highest total number of checkouts for these items are **`r summary_info$top_creators[1, 1]`**, **`r summary_info$top_creators[2, 1]`**, **`r summary_info$top_creators[3, 1]`**. These are some of the most well known Black authors who have contributed greatly to literature with works advancing the field of literature and shedding light onto the racial injustice in this country. So far this year, **`r summary_info$top_recent_total_checkouts`** has the most checkouts of all items whose subjects contains "African American". There are hundreds of different items from the Seattle Public Library whose subject contains "African American". The most popular subject, however, is **`r summary_info$top_subject`** based on total checkouts. Because this research aims to discover patterns among checkouts for these items over the last few years, it was important to calculate the total number of checkouts for each year. The year with the highest number of checkouts was **`r summary_info$top_year`**. This was a bit of a surprise considering 2020 saw the rise of the Black Lives Matter movements and other forms of activism against racism. It is also important to note that this was the year that the COVID-19 pandemic began, which may have affected fibrary checkouts. In total, 2020 had **`r summary_info$checkouts_2020`** checkouts for items with subjects containing "African American".
 
 ### The Dataset
 
@@ -20,21 +32,21 @@ Comparing Checkouts for Items Covering African American Subject Matter vs. All I
 
 ### Comparing Checkouts for Items Covering African American Subject Matter vs. All Items
 
-``````{r, echo = FALSE, warning = FALSE, code = readLines("chart1_example.R")}
+```{r, echo = FALSE, warning = FALSE, code = readLines("chart1_example.R")}
 ```
 
 This chart was included to show how items checked out from the Seattle Public Library, whose subject matter relating to African Americans, compare to all items checked out over the last decade. The chart looks specifically at the average monthly checkouts for items each year. The purpose of this chart is to reveal any trends for library items relating to African American subject matter over the last few years, with a particular interest for how the number of checkouts may have changed after the reemergance of the Black Lives Matter movement in 2020. The chart displays a large spike in these items around the year 2020, indicating that there may be a connection with the protests in 2020. While this is true, the chart also shows a decreased number of checkouts after the year 2020 which may reveal a declining interest in African American subject items
 
 ### Comparing Checkouts for Items Covering African American Subject Matter vs. All Items
 
-``````{r, echo = FALSE, code = readLines("chart2_example.R")}
+```{r, echo = FALSE, code = readLines("chart2_example.R")}
 ```
 
 This chart was included to understand how high rated titles covering topics of racism were checked out from the SPL during 2020. The books included are some of the most popular in recent years and cover important subjects of race. These books are "Between the World and Me" by Ta-Nehisi Coates, "So You Want to Talk About Race" by ljeoma Oluo, and "The New Jim Crow" by Michelle Alexander. Based on this chart, it seems as if there was a spike in checkouts for "So You Want to Talk About Race" and "The New Jim Crow" in the months immediately following the Death of George Floyd which took place on May 25th. However, this does not seem to be a factor with the number of checkouts for "Between the World and Me", which is checked out at a fairly stable rate throughout the year.
 
 ### Analyzing Checkout Data for Popular Books Covering Racial Injustice in a Year that Sparked a Movement Against Racism 
 
-``````{r, echo = FALSE, code = readLines("chart2_example.R")}
+```{r, echo = FALSE, code = readLines("chart2_example.R")}
 ```
 
 This chart was included to display the total number of checkouts for SPL items each year during the last decade. This chart is broken down by the timing of George Floyd's deaths, which sparked a global movement against racism. It appears that 2019-2022 had the highest number of checkouts compared to all other years. While 2019 was prior to the death of George Floyd, all other years were either during or after his death and the beginning of the most recent BLM movement. This reveals a possible connection between the events and number of checkouts.
