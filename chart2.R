@@ -6,12 +6,17 @@ library("stringr")
 library("ggplot2")
 
 # Load the data
-afram_2020_checkouts <- read.csv("~/Desktop/2020-AFRAM-Checkouts.csv", stringsAsFactors = FALSE)
-afram_2020_checkouts[afram_2020_checkouts == ""] <- NA
+checkouts <- read.csv("~/Desktop/Checkouts-SPL.csv", stringsAsFactors = FALSE)
+checkouts[checkouts == ""] <- NA
+
+# Filter by Subjects containing "African American"
+afram <- checkouts %>% 
+  filter(grepl('African American', Subjects))
 
 # Obtain the monthly checkouts for three of the top books covering topics of racial injustice
 # 1. "So You Want to Talk about Race"
-book1 <- afram_2020_checkouts  %>% 
+book1 <- afram  %>% 
+  filter(CheckoutYear == "2020") %>% 
   filter(grepl('So You Want to Talk about Race', Title)) %>% 
   group_by(CheckoutMonth) %>% 
   summarize(TotalCheckouts = sum(Checkouts, na.rm = TRUE)) %>% 
@@ -24,14 +29,16 @@ zero_rows <- data.frame(CheckoutMonth = c(1:5),
 book1.1 <- rbind(book1, zero_rows)
 
 # 2. "The New Jim Crow"
-book2 <- afram_2020_checkouts  %>% 
+book2 <-afram  %>% 
+  filter(CheckoutYear == "2020") %>% 
   filter(grepl('The New Jim Crow|The new Jim Crow', Title)) %>% 
   group_by(CheckoutMonth) %>% 
   summarize(TotalCheckouts = sum(Checkouts, na.rm = TRUE)) %>% 
   mutate(Title = "The New Jim Crow")
 
 # 3. "The New Jim Crow"
-book3 <- afram_2020_checkouts  %>% 
+book3 <-afram  %>% 
+  filter(CheckoutYear == "2020") %>% 
   filter(grepl('Between the World|Between the world', Title)) %>% 
   group_by(CheckoutMonth) %>% 
   summarize(TotalCheckouts = sum(Checkouts, na.rm = TRUE)) %>% 
